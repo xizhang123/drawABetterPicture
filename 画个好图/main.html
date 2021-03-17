@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>main</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/3D.css">
+    </head>
+    <body>
+		<div id="inputs">
+			<br/>
+			<button onclick="getText()">绘图</button>
+			<input id="input" type="text" placeholder="输入Z的表达式"/>
+			<button onclick="Minput('X')">X</button>
+			<button onclick="Minput('Y')">Y</button>
+			<button onclick="Minput('+')">+</button>
+			<button onclick="Minput('-')">-</button>
+			<button onclick="Minput('*')">*</button>
+			<button onclick="Minput('/')">/</button>
+			<button onclick="Minput(',')">,</button>
+			<button onclick="Minput('@')">清空</button>
+			<br/><br/>
+			<button onclick="Minput('A')">A</button>
+			<button onclick="Minput('B')">B</button>
+			<button onclick="Minput('C')">C</button>
+			<button onclick="Minput('D')">D</button>
+			<button onclick="reprint()">重置参数与比例</button>
+			<button onclick="addnew()">添加新图像</button>
+			<button onclick="mswitch()">3D/2D模式切换</button>
+			<br/><br/>
+			<button onclick="Minput('exp()')">exp</button>
+			<button onclick="Minput('log()')">log</button>
+			<button onclick="Minput('pow()')">pow</button>
+			<button onclick="Minput('sqrt()')">sqrt</button>
+			<br/><br/>
+			<button onclick="Minput('sin()')">sin</button>
+			<button onclick="Minput('cos()')">cos</button>
+			<button onclick="Minput('tan()')">tan</button>
+			<button onclick="Minput('asin()')">asin</button>
+			<button onclick="Minput('acos()')">acos</button>
+			<button onclick="Minput('atan()')">atan</button>
+			<button onclick="Minput('atan2()')">atan2</button>
+			<br/><br/>
+			<button onclick="Minput('abs()')">abs</button>
+			<button onclick="Minput('ceil()')">ceil</button>
+			<button onclick="Minput('floor()')">floor</button>
+			<button onclick="Minput('max()')">max</button>
+			<button onclick="Minput('min()')">min</button>
+			<button onclick="Minput('random()')">random</button>
+			<br/><br/>
+			<button onclick="Minput('PI')">PI</button>
+			<button onclick="Minput('E')">E</button>
+			<button onclick="Minput('SRRT1_2')">SQRT1_2</button>
+			<button onclick="Minput('SQRT2')">SQRT2</button>
+			<button onclick="Minput('LN2')">LN2</button>
+			<button onclick="Minput('LN10')">LN10</button>
+			<button onclick="Minput('LOG2E')">LOG2E</button>
+			<button onclick="Minput('LOG10E')">LOG10E</button>
+			<br/><br/>
+			<div id='X' style="background: yellow;">X的比例:1</div>
+			<div id='Y' style="background: yellow;">Y的比例:1</div>
+			<div id='Z' style="background: yellow;">Z的比例:1</div>
+			<br/>
+			<div id='A' style="background: yellow;">A的值:1</div>
+			<div id='B' style="background: yellow;">B的值:1</div>
+			<div id='C' style="background: yellow;">C的值:1</div>
+			<div id='D' style="background: yellow;">D的值:1</div>
+			<br/>
+			<div id='H' style="background: yellow;">绘制比例:1200</div>
+			<div id='cx' style="background: yellow;">旋转中心x=0</div>
+			<div id='cy' style="background: yellow;">旋转中心y=0</div>
+			<div id='cz' style="background: yellow;">旋转中心z=0</div>
+			<br/>
+			<div style="background: aliceblue;">以英文格式输入Z的表达式即可绘制3D函数图像，*不能省略。</div>
+			<div style="background: aliceblue;">添加新图像后旧图像表达式固定，图像保留3个(2D模式6个)。</div>
+			<div style="background: aliceblue;">支持A、B、C、D四个可变参数，黄色区域用鼠标滚轮可修改。</div>
+			<div style="background: aliceblue;">X、Y、Z三坐标正方向最大值默认为1，修改方法同修改参数。</div>
+			<div style="background: aliceblue;">图像可通过鼠标拖拽进行旋转并通过滚轮改变观察距离。</div>
+			<div style="background: aliceblue;">调整绘制比例可缩放图像而不产生改变观察距离引起的变形。</div>
+			<div style="background: aliceblue;">旋转中心也可修改但不提倡，尽量通过坐标变换达成目的。</div>
+		</div>
+    	<div id="canvas">
+        <div><canvas id="canvas1"></canvas></div>
+    	</div>
+    <script src="js/caculate.js" type="text/javascript"></script>
+    <script src="js/3D.js" type="text/javascript"></script>
+    <script src="js/h5.js" type="text/javascript"></script>
+    </body>  
+</html>

@@ -346,56 +346,56 @@ function reprint(){
 	getText();
 	back();
 	if(model=="2D"){
-		document.getElementById("input").placeholder="输入Y的表达式";
+		input.placeholder="输入Y的表达式";
 		far=700;
 		di=[1,0,0];
 		dj=[0,0,0];
 		dk=[0,1,0];
 	}print();
-	document.getElementById('A').innerText="A的值:"+A;
-	document.getElementById('B').innerText="B的值:"+B;
-	document.getElementById('C').innerText="C的值:"+C;
-	document.getElementById('D').innerText="D的值:"+D;
-	document.getElementById('X').innerText="X的比例:"+X;
+	dA.innerText="A值:"+A;
+	dB.innerText="B值:"+B;
+	dC.innerText="C值:"+C;
+	dD.innerText="D值:"+D;
+	dX.innerText="X值:"+X;
 	if(model=="3D"){
-		document.getElementById('Y').innerText="Y的比例:"+Y;
-		document.getElementById('Z').innerText="Z的比例:"+Z;
-		document.getElementById('cy').innerText="旋转中心y=0";
-		document.getElementById('cz').innerText="旋转中心z=0";
+		dY.innerText="Y值:"+Y;
+		dZ.innerText="Z值:"+Z;
+		cy.innerText="中心y=0";
+		cz.innerText="中心z=0";
 	}else{
-		document.getElementById('Y').innerText="";
-		document.getElementById('Z').innerText="Y的比例:"+Z;
-		document.getElementById('cy').innerText="";
-		document.getElementById('cz').innerText="旋转中心y=0";
+		dY.innerText="";
+		dZ.innerText="Y值:"+Z;
+		cy.innerText="";
+		cz.innerText="中心y=0";
 	}
-	document.getElementById('H').innerText="绘制比例:"+drawsize;
-	document.getElementById('cx').innerText="旋转中心x=0";
+	H.innerText="比例:"+drawsize;
+	cx.innerText="中心x=0";
 }
-document.getElementById('H').onmousewheel=function(e){
+H.onmousewheel=function(e){
 	if(e.wheelDelta<0)drawsize*=1.02;else drawsize*=0.98;
 	getText();
 	print();
-	document.getElementById('H').innerText="绘制比例:"+drawsize;
+	H.innerText="比例:"+drawsize;
 }
-document.getElementById('cx').onmousewheel=function(e){
+cx.onmousewheel=function(e){
 	if(e.wheelDelta<0)posi[0]+=10;else posi[0]-=10;
 	print();
-	document.getElementById('cx').innerText="旋转中心x="+posi[0]/200;
+	cx.innerText="中心x="+posi[0]/200;
 }
-document.getElementById('cy').onmousewheel=function(e){
+cy.onmousewheel=function(e){
 	if(model=="3D"){
 		if(e.wheelDelta<0)posi[1]+=10;else posi[1]-=10;
 		print();
-		document.getElementById('cy').innerText="旋转中心y="+posi[1]/200;
+		cy.innerText="中心y="+posi[1]/200;
 	}
 }
-document.getElementById('cz').onmousewheel=function(e){
+cz.onmousewheel=function(e){
 	if(e.wheelDelta<0)posi[2]+=10;else posi[2]-=10;
 	print();
 	if(model=="3D"){
-		document.getElementById('cz').innerText="旋转中心z="+posi[2]/200;
+		cz.innerText="中心z="+posi[2]/200;
 	}else{
-		document.getElementById('cz').innerText="旋转中心y="+posi[2]/200;
+		cz.innerText="中心y="+posi[2]/200;
 	}
 }
 getText();

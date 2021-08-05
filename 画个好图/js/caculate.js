@@ -155,63 +155,63 @@ function Minput(text){
 		}
 	}
 }
-document.getElementById('X').onmousewheel=function(e){
+dX.onmousewheel=function(e){
 	if(e.wheelDelta<0)X*=1.02;else X*=0.98;
 	print();
-	document.getElementById('X').innerText="X的比例:"+X;
+	dX.innerText="X值:"+X;
 }
-document.getElementById('Y').onmousewheel=function(e){
+dY.onmousewheel=function(e){
 	if(model=="3D"){
 		if(e.wheelDelta<0)Y*=1.02;else Y*=0.98;
 		print();
-		document.getElementById('Y').innerText="Y的比例:"+Y;
+		dY.innerText="Y值:"+Y;
 	}
 }
-document.getElementById('Z').onmousewheel=function(e){
+dZ.onmousewheel=function(e){
 	if(e.wheelDelta<0)Z*=1.02;else Z*=0.98;
 	print();
 	if(model=="3D"){
-		document.getElementById('Z').innerText="Z的比例:"+Z;
+		dZ.innerText="Z值:"+Z;
 	}else{
-		document.getElementById('Z').innerText="Y的比例:"+Z;
+		dZ.innerText="Y值:"+Z;
 	}
 }
 
 
-document.getElementById('A').onmousewheel=function(e){
+dA.onmousewheel=function(e){
 	if(e.wheelDelta<0)A*=1.02;else A*=0.98;
 	getText();
 	print();
-	document.getElementById('A').innerText="A的值:"+A;
+	dA.innerText="A值:"+A;
 }
-document.getElementById('B').onmousewheel=function(e){
+dB.onmousewheel=function(e){
 	if(e.wheelDelta<0)B*=1.02;else B*=0.98;
 	getText();
 	print();
-	document.getElementById('B').innerText="B的值:"+B;
+	dB.innerText="B值:"+B;
 }
-document.getElementById('C').onmousewheel=function(e){
+dC.onmousewheel=function(e){
 	if(e.wheelDelta<0)C*=1.02;else C*=0.98;
 	getText();
 	print();
-	document.getElementById('C').innerText="C的值:"+C;
+	dC.innerText="C值:"+C;
 }
-document.getElementById('D').onmousewheel=function(e){
+dD.onmousewheel=function(e){
 	if(e.wheelDelta<0)D*=1.02;else D*=0.98;
 	getText();
 	print();
-	document.getElementById('D').innerText="D的值:"+D;
+	dD.innerText="D值:"+D;
 }
 function mswitch(){
 	if(model=="3D"){
 		model="2D";
 		Minput('@');
 		getText();
-		document.getElementById("input").placeholder="输入Y的表达式";
-		document.getElementById('Y').innerText="";
-		document.getElementById('cy').innerText="";
-		document.getElementById('cz').innerText="旋转中心y="+posi[2]/200;
-		document.getElementById('Z').innerText="Y的比例:"+Z;
+		input.placeholder="输入Y的表达式";
+		dY.innerText="";
+		cy.innerText="";
+		cz.innerText="旋转中心y="+posi[2]/200;
+		dZ.innerText="Y的比例:"+Z;
 		far=700;
 		di=[1,0,0];
 		dj=[0,0,0];
@@ -220,11 +220,11 @@ function mswitch(){
 		model="3D";
 		Minput('@');
 		getText();
-		document.getElementById("input").placeholder="输入Z的表达式";
-		document.getElementById('Y').innerText="Y的比例:"+Y;
-		document.getElementById('cy').innerText="旋转中心y="+posi[1]/200;
-		document.getElementById('cz').innerText="旋转中心z="+posi[2]/200;
-		document.getElementById('Z').innerText="Z的比例:"+Z;
+		input.placeholder="输入Z的表达式";
+		dY.innerText="Y:"+Y;
+		cy.innerText="中心y="+posi[1]/200;
+		cz.innerText="中心z="+posi[2]/200;
+		dZ.innerText="Z值:"+Z;
 		far=1200;
 		di=[0,0,-1];
 		dj=[1,0,0];

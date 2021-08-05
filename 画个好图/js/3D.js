@@ -7,19 +7,20 @@ var posi=[0,0,0];//中心位置
 posi[0]=Number(posi[0]);//转换为数值
 posi[1]=Number(posi[1]);
 posi[2]=Number(posi[2]);
-var canvas=document.getElementById("canvas1");
-var context = canvas.getContext("2d");
+var context = canvas1.getContext("2d");//把地址当作对象直接用就行
 canvas1.onmousemove = function (a) {tur(a);}
 canvas1.onmousedown = function (a) {drag=true;}
 canvas1.onmouseup = function (a) {drag=false;}
 canvas1.onmousewheel = function (a) {if(a.wheelDelta>0)far*=1.1;else far*=0.9;print();}
-function clearc(){
-    canvas.height=canvas.height;
+function clearc(){//把这里面的东西注释掉效果贼壮观
+    canvas1.height=canvas1.height;
 }
 function draw2D(x1,y1,x2,y2,d,color){
+	var w=canvas1.width;
+	var h=canvas1.height;
 	context.beginPath();
-	context.moveTo(x1,y1);
-	context.lineTo(x2,y2);
+	context.moveTo(x1*w/1200,y1*h/750);
+	context.lineTo(x2*w/1200,y2*h/750);
 	context.lineWidth = d;
 	context.strokeStyle = color;
 	context.stroke();
